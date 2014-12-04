@@ -42,6 +42,7 @@
     <string name="app_name">RaMap</string>
     <string name="check_in">Check In</string>
     <string name="check_in_history">Check In History</string>
+    <string name="clear_search">Clear Search</string>
     <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/common_strings.xml -->
     <eat-comment/>
     <string name="common_android_wear_notification_needs_update_text">An application requires an update to the Android Wear app.</string>
@@ -77,8 +78,17 @@
     <string name="create_calendar_message">Allow Ad to create a calendar event?</string>
     <string name="create_calendar_title">Create calendar event</string>
     <string name="decline">Decline</string>
+    <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="search">Search</string>
+    <string name="search_hint">Search Flickr</string>
+    <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
+    <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
+    <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="title_activity_photo_gallery">PhotoGalleryActivity</string>
     <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>

@@ -189,13 +189,11 @@ public class MainActivity extends FragmentActivity {
         });
     }
 
-
-
     void createMarkersFromJson(String json) throws JSONException {
-        // De-serialize the JSON string into an array of city objects
+        // De-serialize the JSON string into an array of building objects
         JSONArray jsonArray = new JSONArray(json);
         for (int i = 0; i < jsonArray.length(); i++) {
-            // Create a marker for each city in the JSON data.
+            // Create a marker for each building in the JSON data.
             JSONObject jsonObj = jsonArray.getJSONObject(i);
             map.addMarker(new MarkerOptions()
                             .title(jsonObj.getString("name"))

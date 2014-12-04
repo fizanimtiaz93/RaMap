@@ -3,4 +3,8 @@
     <string name="app_name">RaMap</string>
     <string name="check_in">Check In</string>
     <string name="check_in_history">Check In History</string>
+    <string name="title_activity_photo_gallery">PhotoGalleryActivity</string>
+    <string name="search_hint">Search Flickr</string>
+    <string name="search">Search</string>
+    <string name="clear_search">Clear Search</string>
 </resources>
