@@ -9909,7 +9909,7 @@ classic
             <file
                 path="C:\Users\Joe&apos;s Desktop\Downloads\ramap-android-master\app\src\main\res\values\strings.xml"
                 qualifiers="" >
-                <string name="app_name" >Hello Map
+                <string name="app_name" >RaMap
                 </string>
             </file>
         </source>

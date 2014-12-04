@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Duane Library",
+        "latlng": [
+            40.86129,
+            -73.88735
+        ],
+        "population": "123"
+    },
+    {
+        "name": "Alpha House",
+        "latlng": [
+            40.86256,
+            -73.88516
+        ],
+        "population": "132"
+    },
+    {
+        "name": "Alumni House",
+        "latlng": [
+            40.86253,
+            -73.88739
+        ],
+        "population": "123"
+    }
+]

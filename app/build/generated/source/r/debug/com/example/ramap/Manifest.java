@@ -9,8 +9,6 @@ package com.example.ramap;
 
 public final class Manifest {
     public static final class permission {
-        /**  TODO: Replace "com.example.hellomap" with your package name 
-         */
         public static final String MAPS_RECEIVE="com.example.ramap.permission.MAPS_RECEIVE";
     }
 }
