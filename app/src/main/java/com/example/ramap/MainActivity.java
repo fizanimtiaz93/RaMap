@@ -12,36 +12,6 @@ package com.example.ramap;
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
 
-
-
- JSON EXAMPLE
-
-[
-    {
-        "name": "John Doe",
-        "latlng": [
-            62.457434,
-            17.349869
-        ],
-        "population": "123"
-    },
-    {
-        "name": "Jane Doe",
-        "latlng": [
-            62.455102,
-            17.345599
-        ],
-        "population": "132"
-    },
-    {
-        "name": "James Bond",
-        "latlng": [
-            62.458287,
-            17.356306
-        ],
-        "population": "123"
-    }
-]
  */
 
         import com.google.android.gms.maps.GoogleMap;
@@ -56,6 +26,7 @@ package com.example.ramap;
         import android.os.Bundle;
         import android.support.v4.app.FragmentActivity;
         import android.util.Log;
+        import android.view.Menu;
 
         import java.io.IOException;
         import java.io.InputStreamReader;
@@ -74,6 +45,18 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         setUpMapIfNeeded();
+
+        // Used for finding current location with button
+        map.setMyLocationEnabled(true);
+        map.getUiSettings().setMyLocationButtonEnabled(true);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is
+        // present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
     @Override

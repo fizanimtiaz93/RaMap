@@ -1,0 +1,5 @@
+C:\Users\Joe's Desktop\Downloads\ramap-android-master\app\build\intermediates\classes\debug
+C:\Users\Joe's Desktop\Downloads\ramap-android-master\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.2-11ed5df63aa19990a1d26d87a4d3d421b08cf264.jar
+C:\Users\Joe's Desktop\Downloads\ramap-android-master\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-035b075226f874665ba53305b5e61c139f85bcbc.jar
+C:\Users\Joe's Desktop\Downloads\ramap-android-master\app\build\intermediates\pre-dexed\debug\classes-86c8531566ad972aa0ff5ff61802f1e8f3058803.jar
+C:\Users\Joe's Desktop\Downloads\ramap-android-master\app\build\intermediates\pre-dexed\debug\classes-f117d108d659ee8db63666efa79a4ccbe891c636.jar
