@@ -1,19 +1,11 @@
-[
-    {
-        "name": "Duane Library",
-        "latlng": [
-            40.86129,
-            -73.88735
-        ],
-        "population": "123"
-    },
+[ 
     {
         "name": "Alpha House",
         "latlng": [
             40.86256,
             -73.88516
         ],
-        "population": "132"
+        "idForInfoWindow": "0"
     },
     {
         "name": "Alumni House",
@@ -21,6 +13,487 @@
             40.86253,
             -73.88739
         ],
-        "population": "123"
+        "idForInfoWindow": "1"
+    },
+    {
+        "name": "Canisius Hall",
+        "latlng": [
+            40.85868,
+            -73.8827
+        ],
+        "idForInfoWindow": "2"
+    },
+    {
+        "name": "Collins Hall",
+        "latlng": [
+            40.86287,
+            -73.8864
+        ],
+        "idForInfoWindow": "3"
+    },
+    {
+        "name": "Cunniffe House",
+        "latlng": [
+            40.86213,
+            -73.88622
+        ],
+        "idForInfoWindow": "4"
+    },
+    {
+        "name": "Dealy Hall",
+        "latlng": [
+            40.86151,
+            -73.88614
+        ],
+        "idForInfoWindow": "5"
+    },
+    {
+        "name": "Duane Library/Admissions",
+        "latlng": [
+            40.86129,
+            -73.88735
+        ],
+        "idForInfoWindow": "6"
+    },
+    {
+        "name": "Faber Hall",
+        "latlng": [
+            40.86316,
+            -73.88579
+        ],
+        "idForInfoWindow": "7"
+    },
+    {
+        "name": "Faculty Memorial Hall",
+        "latlng": [
+            40.85843,
+            -73.88286
+        ],
+        "idForInfoWindow": "8"
+    },
+    {
+        "name": "Fordham Prep",
+        "latlng": [
+            40.8643,
+            -73.88591
+        ],
+        "idForInfoWindow": "9"
+    },
+    {
+        "name": "Freeman Hall",
+        "latlng": [
+            40.8605,
+            -73.88552
+        ],
+        "idForInfoWindow": "10"
+    },
+    {
+        "name": "Hughes Hall",
+        "latlng": [
+            40.86204,
+            -73.88534
+        ],
+        "idForInfoWindow": "11"
+    },
+    {
+        "name": "John Mulcahy Hall",
+        "latlng": [
+            40.85966,
+            -73.88496
+        ],
+        "idForInfoWindow": "12"
+    },
+    {
+        "name": "Keating Hall",
+        "latlng": [
+            40.86057,
+            -73.88387
+        ],
+        "idForInfoWindow": "13"
+    },
+    {
+        "name": "Kohlmann Hall",
+        "latlng": [
+            40.86055,
+            -73.88764
+        ],
+        "idForInfoWindow": "14"
+    },
+    {
+        "name": "Larkin Hall",
+        "latlng": [
+            40.86074,
+            -73.88801
+        ],
+        "idForInfoWindow": "15"
+    },
+    {
+        "name": "Leonard Theatre",
+        "latlng": [
+            40.86448,
+            -73.8854
+        ],
+        "idForInfoWindow": "16"
+    },
+    {
+        "name": "Loyola Hall",
+        "latlng": [
+            40.86276,
+            -73.88567
+        ],
+        "idForInfoWindow": "17"
+    },
+    {
+        "name": "McGinley Center",
+        "latlng": [
+            40.86274,
+            -73.88413
+        ],
+        "idForInfoWindow": "18"
+    },
+    {
+        "name": "Murray Weigel Hall",
+        "latlng": [
+            40.86274,
+            -73.88732
+        ],
+        "idForInfoWindow": "19"
+    },
+    {
+        "name": "Ram Van Pick Up/Drop Off",
+        "latlng": [
+            40.85904,
+            -73.88227
+        ],
+        "idForInfoWindow": "20"
+    },
+    {
+        "name": "Ram Van Pick Up/Drop Off",
+        "latlng": [
+            40.85904,
+            -73.88227
+        ],
+        "idForInfoWindow": "21"
+    },
+    {
+        "name": "Seismic Observatory",
+        "latlng": [
+            40.86035,
+            -73.88515
+        ],
+        "idForInfoWindow": "22"
+    },
+    {
+        "name": "Spellman Hall",
+        "latlng": [
+            40.85982,
+            -73.88393
+        ],
+        "idForInfoWindow": "23"
+    },
+    {
+        "name": "Thebaud Hall",
+        "latlng": [
+            40.86086,
+            -73.88649
+        ],
+        "idForInfoWindow": "24"
+    },
+    {
+        "name": "University Church",
+        "latlng": [
+            40.86356,
+            -73.88641
+        ],
+        "idForInfoWindow": "25"
+    },
+    {
+        "name": "William D. Walsh Family Library",
+        "latlng": [
+            40.86132,
+            -73.88929
+        ],
+        "idForInfoWindow": "26"
+    },
+    {
+        "name": "Alumni Court South",
+        "latlng": [
+            40.86366,
+            -73.88772
+        ],
+        "idForInfoWindow": "27"
+    },
+    {
+        "name": "Campbell Hall",
+        "latlng": [
+            40.86252,
+            -73.88922
+        ],
+        "idForInfoWindow": "28"
+    },
+    {
+        "name": "Finlay Hall",
+        "latlng": [
+            40.86032,
+            -73.88626
+        ],
+        "idForInfoWindow": "29"
+    },
+    {
+        "name": "Loschert Hall",
+        "latlng": [
+            40.8641,
+            -73.8868
+        ],
+        "idForInfoWindow": "30"
+    },
+    {
+        "name": "Martyrs' Court",
+        "latlng": [
+            40.86299,
+            -73.88787
+        ],
+        "idForInfoWindow": "31"
+    },
+    {
+        "name": "O'Hare Hall",
+        "latlng": [
+            40.85941,
+            -73.88262
+        ],
+        "idForInfoWindow": "32"
+    },
+    {
+        "name": "Queens Court",
+        "latlng": [
+            40.86337,
+            -73.88699
+        ],
+        "idForInfoWindow": "33"
+    },
+    {
+        "name": "St. John's Hall",
+        "latlng": [
+            40.86353,
+            -73.88658
+        ],
+        "idForInfoWindow": "34"
+    },
+    {
+        "name": "St. Robert's Hall",
+        "latlng": [
+            40.86323,
+            -73.88716
+        ],
+        "idForInfoWindow": "35"
+    },
+    {
+        "name": "Bishop's Hall",
+        "latlng": [
+            40.86349,
+            -73.88718
+        ],
+        "idForInfoWindow": "36"
+    },
+    {
+        "name": "Salice and Conley Halls",
+        "latlng": [
+            40.86301,
+            -73.88867
+        ],
+        "idForInfoWindow": "37"
+    },
+    {
+        "name": "Tierney Hall",
+        "latlng": [
+            40.85921,
+            -73.88327
+        ],
+        "idForInfoWindow": "38"
+    },
+    {
+        "name": "Walsh Hall",
+        "latlng": [
+            40.8599,
+            -73.88548
+        ],
+        "idForInfoWindow": "39"
+    },
+    {
+        "name": "Bahoshy Field",
+        "latlng": [
+            40.86337,
+            -73.88477
+        ],
+        "idForInfoWindow": "40"
+    },
+    {
+        "name": "Fordham Prep Field",
+        "latlng": [
+            40.86484,
+            -73.88496
+        ],
+        "idForInfoWindow": "41"
+    },
+    {
+        "name": "Hawthorn/Rooney Tennis Courts",
+        "latlng": [
+            40.8638,
+            -73.88513
+        ],
+        "idForInfoWindow": "42"
+    },
+    {
+        "name": "Houlihal Park",
+        "latlng": [
+            40.86106,
+            -73.88269
+        ],
+        "idForInfoWindow": "43"
+    },
+    {
+        "name": "Jack Coffey Field",
+        "latlng": [
+            40.86158,
+            -73.88277
+        ],
+        "idForInfoWindow": "44"
+    },
+    {
+        "name": "Lombardi Memorial Center",
+        "latlng": [
+            40.86292,
+            -73.88335
+        ],
+        "idForInfoWindow": "45"
+    },
+    {
+        "name": "Murphy Field",
+        "latlng": [
+            40.86194,
+            -73.88321
+        ],
+        "idForInfoWindow": "46"
+    },
+    {
+        "name": "Rose Hill Gymnasium",
+        "latlng": [
+            40.8622,
+            -73.88382
+        ],
+        "idForInfoWindow": "47"
+    },
+    {
+        "name": "Tennis House",
+        "latlng": [
+            40.86379,
+            -73.88566
+        ],
+        "idForInfoWindow": "48"
+    },
+    {
+        "name": "Walsh Training Center",
+        "latlng": [
+            40.86225,
+            -73.88252
+        ],
+        "idForInfoWindow": "49"
+    },
+    {
+        "name": "9/11 Memorial Garden",
+        "latlng": [
+            40.86047,
+            -73.88674
+        ],
+        "idForInfoWindow": "50"
+    },
+    {
+        "name": "Archbishop Hughes Statue",
+        "latlng": [
+            40.86223,
+            -73.88666
+        ],
+        "idForInfoWindow": "51"
+    },
+    {
+        "name": "Cemetary",
+        "latlng": [
+            40.86348,
+            -73.88605
+        ],
+        "idForInfoWindow": "52"
+    },
+    {
+        "name": "Edward's Parade",
+        "latlng": [
+            40.86118,
+            -73.88494
+        ],
+        "idForInfoWindow": "53"
+    },
+    {
+        "name": "Martyrs' Lawn",
+        "latlng": [
+            40.86251,
+            -73.88796
+        ],
+        "idForInfoWindow": "54"
+    },
+    {
+        "name": "St. Ignatius Statue",
+        "latlng": [
+            40.86225,
+            -73.88507
+        ],
+        "idForInfoWindow": "55"
+    },
+    {
+        "name": "Victory Bell",
+        "latlng": [
+            40.86185,
+            -73.88415
+        ],
+        "idForInfoWindow": "56"
+    },
+    {
+        "name": "Main/Vehicular Entrance",
+        "latlng": [
+            40.86113,
+            -73.88127
+        ],
+        "idForInfoWindow": "57"
+    },
+    {
+        "name": "Bathgate Avenue",
+        "latlng": [
+            40.86019,
+            -73.88666
+        ],
+        "idForInfoWindow": "58"
+    },
+    {
+        "name": "Belmont Avenue",
+        "latlng": [
+            40.85878,
+            -73.88285
+        ],
+        "idForInfoWindow": "59"
+    },
+    {
+        "name": "Prep Gate",
+        "latlng": [
+            40.86476,
+            -73.88401
+        ],
+        "idForInfoWindow": "60"
+    },
+    {
+        "name": "Fordham Regional Parking Facility",
+        "latlng": [
+            40.85908,
+            -73.88163
+        ],
+        "idForInfoWindow": "61"
     }
+    
 ]

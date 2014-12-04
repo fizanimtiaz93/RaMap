@@ -26,14 +26,8 @@
       <change type="DELETED" beforePath="C:\Users\Joe's Desktop\Downloads\ramap-android-master\RaMap" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Joe's Desktop\Downloads\ramap-android-master\app\build\intermediates\libs\app-debug.ap_" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ramap/FlickrActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ramap/FlickrActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ramap/InfoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ramap/InfoActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ramap/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ramap/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/ramap/OptionsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/ramap/OptionsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/ramap/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/example/ramap/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/flickr_activity.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/flickr_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/info_activity.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/info_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/options_activity.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/options_activity.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/locations.json" afterPath="$PROJECT_DIR$/locations.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ramap-android-master.iws" />
@@ -57,21 +51,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ramap/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.785714" vertical-offset="1773" max-vertical-offset="3604">
-              <caret line="127" column="25" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.4980315" vertical-offset="1906" max-vertical-offset="3706">
+              <caret line="127" column="75" selection-start-line="127" selection-start-column="75" selection-end-line="127" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2532#2808#0" expanded="true" />
-                <element signature="e#2797#2798#0" expanded="true" />
-                <element signature="e#4502#4977#0" expanded="true" />
-                <element signature="e#4958#4959#0" expanded="true" />
-                <element signature="e#5177#5471#0" expanded="true" />
-                <element signature="e#5460#5461#0" expanded="true" />
-                <element signature="e#6536#6816#0" expanded="true" />
-                <element signature="e#6805#6806#0" expanded="true" />
+                <element signature="e#2572#2848#0" expanded="true" />
+                <element signature="e#2837#2838#0" expanded="true" />
+                <element signature="e#4542#5266#0" expanded="true" />
+                <element signature="e#5247#5248#0" expanded="true" />
+                <element signature="e#5466#5763#0" expanded="true" />
+                <element signature="e#5752#5753#0" expanded="true" />
+                <element signature="e#6828#7108#0" expanded="true" />
+                <element signature="e#7097#7098#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ramap/OptionsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-              <caret line="15" column="50" selection-start-line="12" selection-start-column="4" selection-end-line="15" selection-end-column="50" />
+              <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#565#890#0" expanded="true" />
@@ -181,11 +175,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6692914" vertical-offset="308" max-vertical-offset="1343">
-              <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="1343">
+              <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
               <folding>
                 <element signature="e#1326#1344#0" expanded="true" />
                 <element signature="e#1866#1905#0" expanded="true" />
@@ -825,7 +819,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/history_activity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_listview.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ramap/HistoryActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ramap/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/options_activity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ramap/OptionsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/flickr_activity.xml" />
@@ -833,6 +826,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ramap/FlickrActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ramap/InfoActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ramap/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1347,14 +1341,14 @@
           <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2532#2808#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#4502#4977#0" expanded="true" />
-            <element signature="e#4958#4959#0" expanded="true" />
-            <element signature="e#5177#5471#0" expanded="true" />
-            <element signature="e#5460#5461#0" expanded="true" />
-            <element signature="e#6536#6816#0" expanded="true" />
-            <element signature="e#6805#6806#0" expanded="true" />
+            <element signature="e#2572#2848#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#4542#5266#0" expanded="true" />
+            <element signature="e#5247#5248#0" expanded="true" />
+            <element signature="e#5466#5763#0" expanded="true" />
+            <element signature="e#5752#5753#0" expanded="true" />
+            <element signature="e#6828#7108#0" expanded="true" />
+            <element signature="e#7097#7098#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1383,7 +1377,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="373" max-vertical-offset="969">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#1464#1482#0" expanded="true" />
+            <element signature="e#1464#1482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1394,14 +1388,14 @@
           <caret line="99" column="80" selection-start-line="99" selection-start-column="80" selection-end-line="99" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2532#2808#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#4502#4977#0" expanded="true" />
-            <element signature="e#4958#4959#0" expanded="true" />
-            <element signature="e#5177#5471#0" expanded="true" />
-            <element signature="e#5460#5461#0" expanded="true" />
-            <element signature="e#6536#6816#0" expanded="true" />
-            <element signature="e#6805#6806#0" expanded="true" />
+            <element signature="e#2572#2848#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#4542#5266#0" expanded="true" />
+            <element signature="e#5247#5248#0" expanded="true" />
+            <element signature="e#5466#5763#0" expanded="true" />
+            <element signature="e#5752#5753#0" expanded="true" />
+            <element signature="e#6828#7108#0" expanded="true" />
+            <element signature="e#7097#7098#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1430,7 +1424,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="527">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#1464#1482#0" expanded="true" />
+            <element signature="e#1464#1482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1441,14 +1435,14 @@
           <caret line="97" column="43" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2532#2808#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#4502#4977#0" expanded="true" />
-            <element signature="e#4958#4959#0" expanded="true" />
-            <element signature="e#5177#5471#0" expanded="true" />
-            <element signature="e#5460#5461#0" expanded="true" />
-            <element signature="e#6536#6816#0" expanded="true" />
-            <element signature="e#6805#6806#0" expanded="true" />
+            <element signature="e#2572#2848#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#4542#5266#0" expanded="true" />
+            <element signature="e#5247#5248#0" expanded="true" />
+            <element signature="e#5466#5763#0" expanded="true" />
+            <element signature="e#5752#5753#0" expanded="true" />
+            <element signature="e#6828#7108#0" expanded="true" />
+            <element signature="e#7097#7098#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1477,7 +1471,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="527">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#1464#1482#0" expanded="true" />
+            <element signature="e#1464#1482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1488,14 +1482,14 @@
           <caret line="65" column="48" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2532#2808#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#4502#4977#0" expanded="true" />
-            <element signature="e#4958#4959#0" expanded="true" />
-            <element signature="e#5177#5471#0" expanded="true" />
-            <element signature="e#5460#5461#0" expanded="true" />
-            <element signature="e#6536#6816#0" expanded="true" />
-            <element signature="e#6805#6806#0" expanded="true" />
+            <element signature="e#2572#2848#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#4542#5266#0" expanded="true" />
+            <element signature="e#5247#5248#0" expanded="true" />
+            <element signature="e#5466#5763#0" expanded="true" />
+            <element signature="e#5752#5753#0" expanded="true" />
+            <element signature="e#6828#7108#0" expanded="true" />
+            <element signature="e#7097#7098#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1535,7 +1529,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="510">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
           <folding>
-            <element signature="e#1464#1482#0" expanded="true" />
+            <element signature="e#1464#1482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1620,7 +1614,7 @@
         <state vertical-scroll-proportion="-13.851851" vertical-offset="0" max-vertical-offset="986">
           <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
           <folding>
-            <element signature="e#1464#1482#0" expanded="true" />
+            <element signature="e#1464#1482#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1653,24 +1647,6 @@
           <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ramap/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.785714" vertical-offset="1773" max-vertical-offset="3604">
-          <caret line="127" column="25" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2532#2808#0" expanded="true" />
-            <element signature="e#2797#2798#0" expanded="true" />
-            <element signature="e#4502#4977#0" expanded="true" />
-            <element signature="e#4958#4959#0" expanded="true" />
-            <element signature="e#5177#5471#0" expanded="true" />
-            <element signature="e#5460#5461#0" expanded="true" />
-            <element signature="e#6536#6816#0" expanded="true" />
-            <element signature="e#6805#6806#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1708,16 +1684,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ramap/OptionsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ramap/InfoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <caret line="15" column="50" selection-start-line="12" selection-start-column="4" selection-end-line="15" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#565#890#0" expanded="true" />
-            <element signature="e#879#880#0" expanded="true" />
-            <element signature="e#1023#1350#0" expanded="true" />
-            <element signature="e#1339#1340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="1343">
+          <caret line="40" column="65" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+          <folding>
+            <element signature="e#1326#1344#0" expanded="true" />
+            <element signature="e#1866#1905#0" expanded="true" />
+            <element signature="e#2019#2037#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1732,24 +1716,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ramap/InfoActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ramap/OptionsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#565#890#0" expanded="true" />
+            <element signature="e#879#880#0" expanded="true" />
+            <element signature="e#1023#1350#0" expanded="true" />
+            <element signature="e#1339#1340#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ramap/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6692914" vertical-offset="308" max-vertical-offset="1343">
-          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.4980315" vertical-offset="1906" max-vertical-offset="3706">
+          <caret line="127" column="75" selection-start-line="127" selection-start-column="75" selection-end-line="127" selection-end-column="75" />
           <folding>
-            <element signature="e#1326#1344#0" expanded="true" />
-            <element signature="e#1866#1905#0" expanded="true" />
-            <element signature="e#2019#2037#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2572#2848#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#4542#5266#0" expanded="true" />
+            <element signature="e#5247#5248#0" expanded="true" />
+            <element signature="e#5466#5763#0" expanded="true" />
+            <element signature="e#5752#5753#0" expanded="true" />
+            <element signature="e#6828#7108#0" expanded="true" />
+            <element signature="e#7097#7098#0" expanded="true" />
           </folding>
         </state>
       </provider>

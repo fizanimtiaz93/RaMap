@@ -26,6 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -122,7 +123,11 @@ public class MainActivity extends FragmentActivity {
                 map.setOnInfoWindowClickListener(new OnInfoWindowClickListener(){
                     @Override
                     public void onInfoWindowClick(Marker marker){
-                        if(marker.getTitle().equals("Keating Hall")){ // TODO replace Keating Hall with last marker clicked title
+                        if(marker.isVisible()
+                                //|| marker.getTitle().equals("John Mulcahy Hall")
+                                //|| marker.getTitle().equals("Dealy Hall")
+                                //|| marker.getTitle().equals("Duane Library")
+                                ){ // TODO replace Keating Hall with last marker clicked title
                             Intent info = new Intent(getApplicationContext(), OptionsActivity.class);
                             startActivity(info);
                         }
@@ -140,7 +145,7 @@ public class MainActivity extends FragmentActivity {
                 try {
                     retrieveAndAddBuildings();
                 } catch (IOException e) {
-                    Log.e(LOG_TAG, "Cannot retrieve cities", e);
+                    Log.e(LOG_TAG, "Cannot retrieve buildings", e);
                     return;
                 }
             }
@@ -194,7 +199,8 @@ public class MainActivity extends FragmentActivity {
             JSONObject jsonObj = jsonArray.getJSONObject(i);
             map.addMarker(new MarkerOptions()
                             .title(jsonObj.getString("name"))
-                            .snippet(Integer.toString(jsonObj.getInt("check ins")))
+                            .snippet(Integer.toString(jsonObj.getInt("idForInfoWindow")))
+                            //.snippet(Integer.toString(jsonObj.getInt("check ins")))
                             .position(new LatLng(
                                     jsonObj.getJSONArray("latlng").getDouble(0),
                                     jsonObj.getJSONArray("latlng").getDouble(1)
