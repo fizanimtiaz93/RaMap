@@ -63,7 +63,7 @@ package com.example.ramap;
         import java.net.URL;
 
 public class MainActivity extends FragmentActivity {
-    private static final String LOG_TAG = "ExampleApp";
+    private static final String LOG_TAG = "RaMap";
 
     private static final String SERVICE_URL = "http://nrdyninja.com/android/ramap/locations.json";
 
@@ -100,7 +100,7 @@ public class MainActivity extends FragmentActivity {
                 try {
                     retrieveAndAddCities();
                 } catch (IOException e) {
-                    Log.e(LOG_TAG, "Cannot retrive cities", e);
+                    Log.e(LOG_TAG, "Cannot retrieve cities", e);
                     return;
                 }
             }
