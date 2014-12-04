@@ -90,6 +90,9 @@ int drawable ic_plusone_standard_off_client 0x7f02001d
 int drawable ic_plusone_tall_off_client 0x7f02001e
 int drawable powered_by_google_dark 0x7f02001f
 int drawable powered_by_google_light 0x7f020020
+int id action_hybrid 0x7f090018
+int id action_normal 0x7f090017
+int id action_satellite 0x7f090019
 int id book_now 0x7f09000e
 int id buyButton 0x7f09000a
 int id buy_now 0x7f09000f
@@ -103,8 +106,6 @@ int id holo_light 0x7f090006
 int id hybrid 0x7f090000
 int id map 0x7f090014
 int id match_parent 0x7f09000c
-int id menu_about 0x7f090017
-int id menu_settings 0x7f090018
 int id monochrome 0x7f090013
 int id none 0x7f090001
 int id normal 0x7f090002

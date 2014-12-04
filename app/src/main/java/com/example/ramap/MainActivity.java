@@ -16,13 +16,18 @@ package com.example.ramap;
 
         import com.google.android.gms.maps.GoogleMap;
         import com.google.android.gms.maps.SupportMapFragment;
+        import com.google.android.gms.maps.model.BitmapDescriptorFactory;
         import com.google.android.gms.maps.model.LatLng;
+        import com.google.android.gms.maps.model.Marker;
         import com.google.android.gms.maps.model.MarkerOptions;
+        import com.google.android.gms.maps.model.Polygon;
+        import com.google.android.gms.maps.model.PolygonOptions;
 
         import org.json.JSONArray;
         import org.json.JSONException;
         import org.json.JSONObject;
 
+        import android.graphics.Color;
         import android.os.Bundle;
         import android.support.v4.app.FragmentActivity;
         import android.util.Log;
@@ -43,6 +48,8 @@ public class MainActivity extends FragmentActivity {
 
     private static final String SERVICE_URL = "http://nrdyninja.com/android/ramap/locations.json";
 
+    private static final String POLYGON_URL = "http://nrdyninja.com/android/ramap/locationsPoly.json";
+
     protected GoogleMap map;
 
     @Override
@@ -57,7 +64,7 @@ public class MainActivity extends FragmentActivity {
         map.setMyLocationEnabled(true);
         map.getUiSettings().setMyLocationButtonEnabled(true);
 
-        final TextView anwserLabel = (TextView) findViewById(R.id.checkInLocation);
+        final TextView locationText = (TextView) findViewById(R.id.checkInLocation);
         Button getAnswerButton = (Button) findViewById(R.id.checkInButton);
 
         getAnswerButton.setOnClickListener(new View.OnClickListener() {
@@ -65,9 +72,10 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View arg0) {
                 String answer = "Checked Into <location name here>"; //
-                anwserLabel.setText(answer);
+                locationText.setText(answer);
             }
         });
+
     }
 
     @Override
@@ -76,6 +84,26 @@ public class MainActivity extends FragmentActivity {
         // present.
         getMenuInflater().inflate(R.menu.main, menu); //uses menu/main.xml <item> to populate
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_normal:
+                map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                return true;
+
+            case R.id.action_hybrid:
+                map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                return true;
+
+            case R.id.action_satellite:
+                map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -101,6 +129,7 @@ public class MainActivity extends FragmentActivity {
             public void run() {
                 try {
                     retrieveAndAddCities();
+                    retrieveAndAddPolygon();
                 } catch (IOException e) {
                     Log.e(LOG_TAG, "Cannot retrieve cities", e);
                     return;
@@ -145,6 +174,63 @@ public class MainActivity extends FragmentActivity {
             }
         });
     }
+
+
+    // Start polygon from JSON
+    protected void retrieveAndAddPolygon() throws IOException {
+        HttpURLConnection conn = null;
+        final StringBuilder json = new StringBuilder();
+        try {
+            // Connect to the web service
+            URL url = new URL(POLYGON_URL);
+            conn = (HttpURLConnection) url.openConnection();
+            InputStreamReader in = new InputStreamReader(conn.getInputStream());
+
+            // Read the JSON data into the StringBuilder
+            int read;
+            char[] buff = new char[1024];
+            while ((read = in.read(buff)) != -1) {
+                json.append(buff, 0, read);
+            }
+        } catch (IOException e) {
+            Log.e(LOG_TAG, "Error connecting to service", e);
+            throw new IOException("Error connecting to service", e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+
+        // Create markers for the city data.
+        // Must run this on the UI thread since it's a UI operation.
+        runOnUiThread(new Runnable() {
+            public void run() {
+                try {
+                    createPolygonFromJson(json.toString());
+                } catch (JSONException e) {
+                    Log.e(LOG_TAG, "Error processing JSON", e);
+                }
+            }
+        });
+    }
+
+    void createPolygonFromJson(String json) throws JSONException {
+        // De-serialize the JSON string into an array of city objects
+        JSONArray jsonArrayPoly = new JSONArray(json);
+        for (int i = 0; i < jsonArrayPoly.length(); i++) {
+            // Create a marker for each city in the JSON data.
+            JSONObject jsonObj = jsonArrayPoly.getJSONObject(i);
+            map.addPolygon(new PolygonOptions()
+                            //.title(jsonObj.getString("name"))
+                            .position(new LatLng(
+                                    jsonObj.getJSONArray("latlngPoly").getDouble(0),
+                                    jsonObj.getJSONArray("latlngPoly").getDouble(1)
+                            ))
+            );
+        }
+    }
+    // End polygon from JSON
+
 
     void createMarkersFromJson(String json) throws JSONException {
         // De-serialize the JSON string into an array of city objects

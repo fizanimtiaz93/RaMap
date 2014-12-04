@@ -2,14 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/menu_about"
+        android:id="@+id/action_normal"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="About"/>
+        android:title="Normal"/>
     <item
-        android:id="@+id/menu_settings"
+        android:id="@+id/action_hybrid"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="Settings"/>
+        android:title="Hybrid"/>
+    <item
+        android:id="@+id/action_satellite"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Satellite"/>
+
 
 </menu><!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/src/main/res/menu/main.xml -->
