@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+</RelativeLayout><!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/src/main/res/layout/info_activity.xml -->

@@ -14,48 +14,35 @@ package com.example.ramap;
 
  */
 
-        import com.google.android.gms.maps.GoogleMap;
-        import com.google.android.gms.maps.SupportMapFragment;
-        import com.google.android.gms.maps.model.LatLng;
-        import com.google.android.gms.maps.model.Marker;
-        import com.google.android.gms.maps.model.MarkerOptions;
-        import com.google.android.gms.maps.model.Polygon;
-        import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-        import org.json.JSONArray;
-        import org.json.JSONException;
-        import org.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-        import android.content.Intent;
-        import android.graphics.Color;
-        import android.os.Bundle;
-        import android.support.v4.app.FragmentActivity;
-        import android.util.Log;
-        import android.view.Menu;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.TextView;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import java.io.IOException;
-        import java.io.InputStreamReader;
-        import java.net.HttpURLConnection;
-        import java.net.URL;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class MainActivity extends FragmentActivity {
     private static final String LOG_TAG = "RaMap";
 
     private static final String SERVICE_URL = "http://nrdyninja.com/android/ramap/locations.json";
-
-    //private static final String POLYGON_URL = "http://nrdyninja.com/android/ramap/locationsPoly.json";
-    private static final LatLng FORDHAM = new LatLng(40.8607081, -73.8854141);
-
-    private static final int WIDTH_MAX = 50;
-    private static final int HUE_MAX = 360;
-    private static final int ALPHA_MAX = 255;
-
-    private Polygon mMutablePolygon;
-
 
     protected GoogleMap map;
 
@@ -71,31 +58,17 @@ public class MainActivity extends FragmentActivity {
         map.setMyLocationEnabled(true);
         map.getUiSettings().setMyLocationButtonEnabled(true);
 
-        final TextView locationText = (TextView) findViewById(R.id.checkInLocation);
-        Button getAnswerButton = (Button) findViewById(R.id.checkInButton);
+        final TextView answerLabel = (TextView) findViewById(R.id.checkInLocation);
+        Button getCheckInButton = (Button) findViewById(R.id.checkInButton);
 
-        getAnswerButton.setOnClickListener(new View.OnClickListener() {
+        getCheckInButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                String answer = "Checked Into <location name here>";
-                locationText.setText(answer);
+                String answer = "You're checked into <location name here>"; //set InfoWindowClickListener name
+                answerLabel.setText(answer);
             }
         });
-
-        map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener(){
-            @Override
-            public void onInfoWindowClick(Marker marker){
-                if(marker.getTitle().equals("name")){
-                    Intent info = new Intent(getApplicationContext(), CheckIns.class);
-                    startActivity(info);
-                }
-            }
-        });
-
-
-
-
     }
 
     @Override
@@ -108,29 +81,31 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_normal:
-                map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                return true;
+        // TODO Auto-generated method stub
+        switch (item.getItemId())
+        {
+            //TODO this should open HistoryActivity.java
+            case R.id.check_in_history_menu:
+                Intent intent = new Intent (getApplicationContext(), HistoryActivity.class);
+                startActivity(intent); // starts
+                break;
 
-            case R.id.action_hybrid:
-                map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                return true;
+            //TODO this should open settings activity
+            case R.id.settings_menu:
+                Toast.makeText(getBaseContext(), "You clicked on settings menu option.", Toast.LENGTH_SHORT).show();
+                break;
 
-            case R.id.action_satellite:
-                map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+            case R.id.about_menu:
+                Toast.makeText(getBaseContext(), "Created by: Joseph LeRoy, Kevin McCarthy, Alexander D, Fizan I", Toast.LENGTH_SHORT).show();
         }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
-
     }
 
     private void setUpMapIfNeeded() {
@@ -149,65 +124,25 @@ public class MainActivity extends FragmentActivity {
         new Thread(new Runnable() {
             public void run() {
                 try {
-                    retrieveAndAddMarkers();
-                    retrieveAndAddPolygons();
+                    retrieveAndAddCities();
                 } catch (IOException e) {
-                    Log.e(LOG_TAG, "Cannot retrieve markers", e);
+                    Log.e(LOG_TAG, "Cannot retrieve cities", e);
                     return;
                 }
             }
         }).start();
-
-
     }
 
-    protected void retrieveAndAddMarkers() throws IOException {
+    protected void retrieveAndAddCities() throws IOException {
         HttpURLConnection conn = null;
         final StringBuilder json = new StringBuilder();
         try {
             // Connect to the web service
-            URL url = new URL(SERVICE_URL); // reads the service url into memory for the connection library
-            conn = (HttpURLConnection) url.openConnection(); // creates the connection between thread and http
-            InputStreamReader in = new InputStreamReader(conn.getInputStream()); // starts looking through latlng marker points in JSON file
+            URL url = new URL(SERVICE_URL);
+            conn = (HttpURLConnection) url.openConnection();
+            InputStreamReader in = new InputStreamReader(conn.getInputStream());
 
-            // reads the json information into the string builder
-            int read;
-            char[] buff = new char[1024];
-            while ((read = in.read(buff)) != -1) {
-                json.append(buff, 0, read);
-            }
-        } catch (IOException e) {
-            Log.e(LOG_TAG, "Error connecting to service", e);
-            throw new IOException("Error connecting to service", e);
-        } finally {
-            if (conn != null) {
-                conn.disconnect();
-            }
-        }
-        // Create markers for the city data.
-        // Must run this on the UI thread since it's a UI operation.
-        runOnUiThread(new Runnable() {
-            public void run() {
-                try {
-                    createPolygonFromJson(json.toString()); // creates polygons from json file
-                } catch (JSONException e) {
-                    Log.e(LOG_TAG, "Error processing JSON", e);
-                }
-            }
-        });
-    }
-
-
-    protected void retrieveAndAddPolygons() throws IOException {
-        HttpURLConnection conn = null;
-        final StringBuilder json = new StringBuilder();
-        try {
-            // Connect to the web service
-            URL url = new URL(SERVICE_URL); // reads the service url into memory for the connection library
-            conn = (HttpURLConnection) url.openConnection(); // creates the connection between thread and http
-            InputStreamReader in = new InputStreamReader(conn.getInputStream()); // starts looking through latlng marker points in JSON file
-
-            // reads the json information into the string builder
+            // Read the JSON data into the StringBuilder
             int read;
             char[] buff = new char[1024];
             while ((read = in.read(buff)) != -1) {
@@ -222,14 +157,12 @@ public class MainActivity extends FragmentActivity {
             }
         }
 
-
         // Create markers for the city data.
         // Must run this on the UI thread since it's a UI operation.
         runOnUiThread(new Runnable() {
             public void run() {
                 try {
-                    createMarkersFromJson(json.toString()); // creates markers from json file
-                    createPolygonFromJson(json.toString()); // creates polygons from json file
+                    createMarkersFromJson(json.toString());
                 } catch (JSONException e) {
                     Log.e(LOG_TAG, "Error processing JSON", e);
                 }
@@ -237,24 +170,11 @@ public class MainActivity extends FragmentActivity {
         });
     }
 
-    void createPolygonFromJson(String json) throws JSONException {
-    // De-serialize the JSON string into an array of city objects
-        PolygonOptions polygonOptions = new PolygonOptions();
-        polygonOptions.strokeColor(Color.RED);
-        polygonOptions.fillColor(Color.BLUE);
-        JSONArray jsonArrayPoly = new JSONArray(json);
-        for (int i = 0; i < jsonArrayPoly.length(); i++) {
-            // Create a marker for each city in the JSON data.
-            JSONObject jsonObj = jsonArrayPoly.getJSONObject(i);
-            polygonOptions.add(new LatLng(jsonObj.getJSONArray("latlngPoly").getDouble(0),jsonObj.getJSONArray("latlngPoly").getDouble(1)));
-        }
-        Polygon polygon = map.addPolygon(polygonOptions);
-    }
+
 
     void createMarkersFromJson(String json) throws JSONException {
         // De-serialize the JSON string into an array of city objects
         JSONArray jsonArray = new JSONArray(json);
-
         for (int i = 0; i < jsonArray.length(); i++) {
             // Create a marker for each city in the JSON data.
             JSONObject jsonObj = jsonArray.getJSONObject(i);
@@ -265,7 +185,9 @@ public class MainActivity extends FragmentActivity {
                                     jsonObj.getJSONArray("latlng").getDouble(0),
                                     jsonObj.getJSONArray("latlng").getDouble(1)
                             ))
+
             );
         }
     }
+
 }

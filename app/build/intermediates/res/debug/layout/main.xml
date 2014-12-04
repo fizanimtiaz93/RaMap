@@ -37,7 +37,7 @@ https://developers.google.com/maps/documentation/android/map#using_xml_attribute
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:text="@string/checkin" />
+        android:text="@string/check_in" />
 
     <TextView
         android:id="@+id/checkInLocation"
@@ -47,6 +47,7 @@ https://developers.google.com/maps/documentation/android/map#using_xml_attribute
         android:textSize="20sp"
         android:textColor="#000"
         />
+
 </RelativeLayout>
 
 <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/src/main/res/layout/main.xml -->

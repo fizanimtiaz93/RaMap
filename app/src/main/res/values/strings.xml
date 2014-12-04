@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RaMap</string>
-    <string name="checkin">Check In</string>
+    <string name="check_in">Check In</string>
+    <string name="check_in_history">Check In History</string>
 </resources>
