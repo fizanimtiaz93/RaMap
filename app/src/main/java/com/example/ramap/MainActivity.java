@@ -27,6 +27,11 @@ package com.example.ramap;
         import android.support.v4.app.FragmentActivity;
         import android.util.Log;
         import android.view.Menu;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
         import java.io.IOException;
         import java.io.InputStreamReader;
@@ -43,19 +48,33 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        setUpMapIfNeeded();
+        setContentView(R.layout.main);  // references layout/main.xml to the initial view
+        setUpMapIfNeeded();             // sets up the MapView
 
         // Used for finding current location with button
+        // Will eventually pass current location into a value so that markers
+        // are populated when they're 5m from current location.
         map.setMyLocationEnabled(true);
         map.getUiSettings().setMyLocationButtonEnabled(true);
+
+        final TextView anwserLabel = (TextView) findViewById(R.id.checkInLocation);
+        Button getAnswerButton = (Button) findViewById(R.id.checkInButton);
+
+        getAnswerButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                String answer = "Checked Into <location name here>"; //
+                anwserLabel.setText(answer);
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is
         // present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main, menu); //uses menu/main.xml <item> to populate
         return true;
     }
 
@@ -135,7 +154,7 @@ public class MainActivity extends FragmentActivity {
             JSONObject jsonObj = jsonArray.getJSONObject(i);
             map.addMarker(new MarkerOptions()
                             .title(jsonObj.getString("name"))
-                            .snippet(Integer.toString(jsonObj.getInt("population")))
+                            .snippet(Integer.toString(jsonObj.getInt("check ins")))
                             .position(new LatLng(
                                     jsonObj.getJSONArray("latlng").getDouble(0),
                                     jsonObj.getJSONArray("latlng").getDouble(1)
