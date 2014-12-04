@@ -53,6 +53,21 @@
             android:label="Check In History">
 
             </activity>
+        <activity
+            android:name=".OptionsActivity"
+            android:label="Options Activity">
+
+        </activity>
+        <activity
+            android:name=".InfoActivity"
+            android:label="Building Info Activity">
+
+            </activity>
+        <activity
+            android:name=".FlickrActivity"
+            android:label="Pictures Activity">
+            
+            </activity>
     </application>
 
 </manifest>

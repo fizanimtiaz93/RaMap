@@ -59,6 +59,18 @@
             android:name="com.example.ramap.HistoryActivity"
             android:label="Check In History" >
         </activity>
+        <activity
+            android:name="com.example.ramap.OptionsActivity"
+            android:label="Options Activity" >
+        </activity>
+        <activity
+            android:name="com.example.ramap.InfoActivity"
+            android:label="Building Info Activity" >
+        </activity>
+        <activity
+            android:name="com.example.ramap.FlickrActivity"
+            android:label="Pictures Activity" >
+        </activity>
     </application>
 
 </manifest>

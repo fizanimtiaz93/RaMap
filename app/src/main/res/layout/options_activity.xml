@@ -26,6 +26,6 @@
         android:id="@+id/pics_button"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp" />
+        android:layout_marginTop="148dp" />
 
 </RelativeLayout>

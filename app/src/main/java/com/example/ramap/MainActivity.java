@@ -17,7 +17,10 @@ package com.example.ramap;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
+import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -92,11 +95,11 @@ public class MainActivity extends FragmentActivity {
 
             //TODO this should open settings activity
             case R.id.settings_menu:
-                Toast.makeText(getBaseContext(), "You clicked on settings menu option.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "Settings option doesn't work yet.", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.about_menu:
-                Toast.makeText(getBaseContext(), "Created by: Joseph LeRoy, Kevin McCarthy, Alexander D, Fizan I", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), "Created by: Joseph LeRoy, Kevin McCarthy, Alexander Despotakis, Fizan Imtiaz", Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);
@@ -114,6 +117,17 @@ public class MainActivity extends FragmentActivity {
                     .getMap();
             if (map != null) {
                 setUpMap();
+
+                // allows info windows to be clicked on and open OptionsActivity
+                map.setOnInfoWindowClickListener(new OnInfoWindowClickListener(){
+                    @Override
+                    public void onInfoWindowClick(Marker marker){
+                        if(marker.getTitle().equals("Keating Hall")){ // TODO replace Keating Hall with last marker clicked title
+                            Intent info = new Intent(getApplicationContext(), OptionsActivity.class);
+                            startActivity(info);
+                        }
+                    }
+                });
             }
         }
     }
@@ -124,7 +138,7 @@ public class MainActivity extends FragmentActivity {
         new Thread(new Runnable() {
             public void run() {
                 try {
-                    retrieveAndAddCities();
+                    retrieveAndAddBuildings();
                 } catch (IOException e) {
                     Log.e(LOG_TAG, "Cannot retrieve cities", e);
                     return;
@@ -133,7 +147,7 @@ public class MainActivity extends FragmentActivity {
         }).start();
     }
 
-    protected void retrieveAndAddCities() throws IOException {
+    protected void retrieveAndAddBuildings() throws IOException {
         HttpURLConnection conn = null;
         final StringBuilder json = new StringBuilder();
         try {

@@ -15,12 +15,25 @@ public class OptionsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options_activity);
 
+        // Info Button
         Button infoButton = (Button)findViewById(R.id.info_button);
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO launch new activity for info
                 Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
+                startActivity(intent); // launches InfoActivity
+
+            }
+        });
+
+        // Pics Button
+        Button picsButton = (Button)findViewById(R.id.pics_button);
+        picsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO launch new activity for info
+                Intent intent = new Intent(getApplicationContext(), FlickrActivity.class);
                 startActivity(intent); // launches InfoActivity
 
             }

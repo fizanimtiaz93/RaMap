@@ -366,18 +366,18 @@ containing a value of this type.
         public static final int buyButton=0x7f09000a;
         public static final int buy_now=0x7f09000f;
         public static final int buy_with_google=0x7f090010;
-        public static final int checkInButton=0x7f090017;
-        public static final int checkInLocation=0x7f090018;
+        public static final int checkInButton=0x7f090018;
+        public static final int checkInLocation=0x7f090019;
         public static final int check_in_history_menu=0x7f09001c;
         public static final int classic=0x7f090011;
-        public static final int country_list=0x7f090015;
+        public static final int country_list=0x7f090016;
         public static final int grayscale=0x7f090012;
         public static final int holo_dark=0x7f090005;
         public static final int holo_light=0x7f090006;
         public static final int hybrid=0x7f090000;
         public static final int info_button=0x7f09001a;
         public static final int label=0x7f090014;
-        public static final int map=0x7f090016;
+        public static final int map=0x7f090017;
         public static final int match_parent=0x7f09000c;
         public static final int monochrome=0x7f090013;
         public static final int none=0x7f090001;
@@ -390,7 +390,7 @@ containing a value of this type.
         public static final int settings_menu=0x7f09001d;
         public static final int strict_sandbox=0x7f090009;
         public static final int terrain=0x7f090004;
-        public static final int textView=0x7f090019;
+        public static final int textView=0x7f090015;
         public static final int wrap_content=0x7f09000d;
     }
     public static final class integer {
