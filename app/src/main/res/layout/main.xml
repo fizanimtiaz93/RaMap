@@ -12,24 +12,24 @@ https://developers.google.com/maps/documentation/android/map#using_xml_attribute
     android:layout_height="fill_parent"
     android:orientation="vertical" >
     <!-- map: will never resolve since it's inside LinearLayout, so I suppressed the warnings. -->
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/map"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    map:cameraBearing="112.5"
-    map:cameraTargetLat="40.8600969"
-    map:cameraTargetLng="-73.8834109"
-    map:cameraTilt="30"
-    map:cameraZoom="17"
-    map:uiCompass="true"
-    map:uiRotateGestures="true"
-    map:uiScrollGestures="true"
-    map:uiTiltGestures="true"
-    map:uiZoomControls="false"
-    map:uiZoomGestures="true"
-    map:mapType="normal"/>
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        map:cameraBearing="112.5"
+        map:cameraTargetLat="40.8600969"
+        map:cameraTargetLng="-73.8834109"
+        map:cameraTilt="30"
+        map:cameraZoom="17"
+        map:uiCompass="true"
+        map:uiRotateGestures="true"
+        map:uiScrollGestures="true"
+        map:uiTiltGestures="true"
+        map:uiZoomControls="false"
+        map:uiZoomGestures="true"
+        map:mapType="normal"/>
 
     <Button
         android:id="@+id/checkInButton"
@@ -49,4 +49,3 @@ https://developers.google.com/maps/documentation/android/map#using_xml_attribute
         />
 
 </RelativeLayout>
-

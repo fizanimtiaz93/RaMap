@@ -7,4 +7,13 @@
     <string name="search_hint">Search Flickr</string>
     <string name="search">Search</string>
     <string name="clear_search">Clear Search</string>
+
+    <!-- Building Descriptions -->
+    <string name="McGinley_Center">"Built in 1959, the McGinley Center is Rose Hill's "living room,"
+        where students socialize, attend events, and dine at the Marketplace and Dagger John's.
+        Named in honor of Father Laurence J. McGinley, president of Fordham University from 1949 to 1963,
+        the student center is also home to the Office of Career Services, the University Bookstore, Campus Ministry,
+        and the Office of Student Leadership and Community Development. It also houses the Dorothy Day Center for Service
+        and Justice, and Global Outreach, a cultural immersion and service program."</string>
+
 </resources>

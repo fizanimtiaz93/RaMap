@@ -26,8 +26,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -50,11 +53,20 @@ public class MainActivity extends FragmentActivity {
 
     protected GoogleMap map;
 
+    private static PrefsActivity _appPrefs;
+
+    //public static SharedPreferences sharedPreferences;
+    //public static String preName = "mypref";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);  // references layout/main.xml to the initial view
         setUpMapIfNeeded();             // sets up the MapView
+
+        _appPrefs = new PrefsActivity(getApplicationContext());
+        // Shared Prefs
+       // sharedPreferences = getSharedPreferences(preName, MODE_PRIVATE);
 
         // Used for finding current location with button
         // Will eventually pass current location into a value so that markers
@@ -65,12 +77,28 @@ public class MainActivity extends FragmentActivity {
         final TextView answerLabel = (TextView) findViewById(R.id.checkInLocation);
         Button getCheckInButton = (Button) findViewById(R.id.checkInButton);
 
+
         getCheckInButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                String answer = "You're checked into <location name here>"; //set InfoWindowClickListener name
+                System.out.println("Output from onclick: "+ arg0); // Debug console output.
+                String answer = "You're checked into Keating Hall."; //set InfoWindowClickListener name
                 answerLabel.setText(answer);
+
+                String buildingName = "Keating Hall";
+
+                _appPrefs.save(buildingName);
+
+                // Open shared preferences for storage
+                //SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                // Save the data
+                //editor.putString("Name", "Keating Hall");
+
+                // Commit or Saves the value
+               // editor.commit();
+
             }
         });
     }
@@ -124,9 +152,9 @@ public class MainActivity extends FragmentActivity {
                     @Override
                     public void onInfoWindowClick(Marker marker){
                         if(marker.isVisible()
-                                //|| marker.getTitle().equals("John Mulcahy Hall")
-                                //|| marker.getTitle().equals("Dealy Hall")
-                                //|| marker.getTitle().equals("Duane Library")
+                            //|| marker.getTitle().equals("John Mulcahy Hall")
+                            //|| marker.getTitle().equals("Dealy Hall")
+                            //|| marker.getTitle().equals("Duane Library")
                                 ){ // TODO replace Keating Hall with last marker clicked title
                             Intent info = new Intent(getApplicationContext(), OptionsActivity.class);
                             startActivity(info);
@@ -198,7 +226,7 @@ public class MainActivity extends FragmentActivity {
             map.addMarker(new MarkerOptions()
                             .title(jsonObj.getString("name"))
                             .snippet(Integer.toString(jsonObj.getInt("idForInfoWindow")))
-                            //.snippet(Integer.toString(jsonObj.getInt("check ins")))
+                                    //.snippet(Integer.toString(jsonObj.getInt("check ins")))
                             .position(new LatLng(
                                     jsonObj.getJSONArray("latlng").getDouble(0),
                                     jsonObj.getJSONArray("latlng").getDouble(1)

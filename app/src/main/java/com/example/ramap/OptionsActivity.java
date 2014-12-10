@@ -38,5 +38,18 @@ public class OptionsActivity extends Activity {
 
             }
         });
+
+        // Twitter Button
+        /*Button twitterButton = (Button)findViewById(R.id.twitter_button);
+        picsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO launch new activity for info
+                Intent intent = new Intent(getApplicationContext(), TwitterActivity.class);
+                startActivity(intent); // launches InfoActivity
+
+            }
+        });*/
+
     }
 }
