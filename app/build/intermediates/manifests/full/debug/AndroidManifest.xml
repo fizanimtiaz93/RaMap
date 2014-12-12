@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="14"
         android:targetSdkVersion="20" />
 
     <permission
@@ -68,7 +68,7 @@
             android:label="Building Info Activity" >
         </activity>
         <activity
-            android:name="com.example.ramap.FlickrActivity"
+            android:name="flickr.FlickrActivity"
             android:label="Pictures Activity"
             android:launchMode="singleTop" >
             <intent-filter>

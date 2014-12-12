@@ -1,4 +1,4 @@
-package com.example.ramap;
+package flickr;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,7 +23,8 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SearchView;
-import android.widget.Toast;
+
+import com.example.ramap.R;
 
 /**
  * Created by Joe's Desktop on 12/9/2014.

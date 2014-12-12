@@ -1,4 +1,4 @@
-package com.example.ramap;
+package flickr;
 
 /**
  * Created by Joe's Desktop on 12/9/2014.

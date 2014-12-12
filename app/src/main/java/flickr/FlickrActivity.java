@@ -1,10 +1,12 @@
-package com.example.ramap;
+package flickr;
 
 import android.app.SearchManager;
 import android.content.Intent;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+
+import com.example.ramap.R;
 
 /**
  * Created by Joe's Desktop on 12/8/2014.

@@ -1,4 +1,4 @@
-package com.example.ramap;
+package flickr;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

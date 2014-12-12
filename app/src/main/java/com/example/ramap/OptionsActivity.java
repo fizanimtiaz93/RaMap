@@ -6,10 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import flickr.FlickrActivity;
+
 /**
  * Created by Joe's Desktop on 12/8/2014.
  */
 public class OptionsActivity extends Activity {
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +26,12 @@ public class OptionsActivity extends Activity {
             @Override
             public void onClick(View view) {
                 //TODO launch new activity for info
+                Bundle extras = getIntent().getExtras();
+                if(extras != null) {
+                    String value = extras.getString("name");
+                }
                 Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
+                intent.putExtra("name", getTitle());
                 startActivity(intent); // launches InfoActivity
 
             }

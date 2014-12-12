@@ -16,21 +16,19 @@ package com.example.ramap;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
-import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
+import com.google.android.gms.maps.model.PolygonOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -53,7 +51,7 @@ public class MainActivity extends FragmentActivity {
 
     protected GoogleMap map;
 
-    private static PrefsActivity _appPrefs;
+    //private static PrefsActivity _appPrefs;
 
     //public static SharedPreferences sharedPreferences;
     //public static String preName = "mypref";
@@ -64,9 +62,9 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.main);  // references layout/main.xml to the initial view
         setUpMapIfNeeded();             // sets up the MapView
 
-        _appPrefs = new PrefsActivity(getApplicationContext());
+        //_appPrefs = new PrefsActivity(getApplicationContext());
         // Shared Prefs
-       // sharedPreferences = getSharedPreferences(preName, MODE_PRIVATE);
+        // sharedPreferences = getSharedPreferences(preName, MODE_PRIVATE);
 
         // Used for finding current location with button
         // Will eventually pass current location into a value so that markers
@@ -74,9 +72,8 @@ public class MainActivity extends FragmentActivity {
         map.setMyLocationEnabled(true);
         map.getUiSettings().setMyLocationButtonEnabled(true);
 
-        final TextView answerLabel = (TextView) findViewById(R.id.checkInLocation);
+        /*final TextView answerLabel = (TextView) findViewById(R.id.checkInLocation);
         Button getCheckInButton = (Button) findViewById(R.id.checkInButton);
-
 
         getCheckInButton.setOnClickListener(new View.OnClickListener() {
 
@@ -86,9 +83,9 @@ public class MainActivity extends FragmentActivity {
                 String answer = "You're checked into Keating Hall."; //set InfoWindowClickListener name
                 answerLabel.setText(answer);
 
-                String buildingName = "Keating Hall";
+                //String buildingName = "Keating Hall";
 
-                _appPrefs.save(buildingName);
+                //_appPrefs.save(buildingName);
 
                 // Open shared preferences for storage
                 //SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -100,7 +97,7 @@ public class MainActivity extends FragmentActivity {
                // editor.commit();
 
             }
-        });
+        });*/
     }
 
     @Override
@@ -147,17 +144,60 @@ public class MainActivity extends FragmentActivity {
             if (map != null) {
                 setUpMap();
 
+                //TODO parse from JSON
+                //Keating Hall
+                map.addPolygon(new PolygonOptions()
+                .add(new LatLng(40.86087017518951, -73.88396859169006),
+                        new LatLng(40.86056994824036, -73.88344019651413),
+                        new LatLng(40.86017843402579, -73.88381570577621),
+                        new LatLng(40.86049286272303, -73.88437360525131))
+                        .strokeColor(Color.BLACK)
+                        .strokeWidth(4)
+                        .fillColor(Color.GREEN));
+
+                //Physics
+                map.addPolygon(new PolygonOptions()
+                        .add(new LatLng(40.86065109079324, -73.8857951760292),
+                                new LatLng(40.86057197680538, -73.88562351465225),
+                                new LatLng(40.86062877660109, -73.88557523488998),
+                                new LatLng(40.860541548323354, -73.88539552688599),
+                                new LatLng(40.86047866274954, -73.88544380664825),
+                                new LatLng(40.8603934628446, -73.88526141643524),
+                                new LatLng(40.86024740560974, -73.88539552688599),
+                                new LatLng(40.86052329122742, -73.88590782880783)
+                                )
+                        .strokeColor(Color.BLACK)
+                        .strokeWidth(4)
+                        .fillColor(Color.GREEN));
+
+
+
+
                 // allows info windows to be clicked on and open OptionsActivity
                 map.setOnInfoWindowClickListener(new OnInfoWindowClickListener(){
                     @Override
-                    public void onInfoWindowClick(Marker marker){
+                    public void onInfoWindowClick(final Marker marker){
                         if(marker.isVisible()
                             //|| marker.getTitle().equals("John Mulcahy Hall")
                             //|| marker.getTitle().equals("Dealy Hall")
                             //|| marker.getTitle().equals("Duane Library")
                                 ){ // TODO replace Keating Hall with last marker clicked title
-                            Intent info = new Intent(getApplicationContext(), OptionsActivity.class);
+
+                            // TODO pass marker.getTitle() to --> OptionsActivity --> Info Button, etc.
+                            Toast.makeText(MainActivity.this, "Location: " + marker.getTitle(), Toast.LENGTH_SHORT).show();
+                            Intent info = new Intent(MainActivity.this, OptionsActivity.class);
                             startActivity(info);
+
+                            Button getCheckInButton = (Button) findViewById(R.id.checkInButton);
+                            getCheckInButton.setOnClickListener(new View.OnClickListener() {
+
+                                @Override
+                                public void onClick(View arg0) {
+                                    Toast.makeText(MainActivity.this, "You checked into:" + marker.getTitle(), Toast.LENGTH_SHORT).show();
+                                    //System.out.println("Output from onclick: "+ marker.getTitle()); // Debug console output.
+
+                                }
+                            });
                         }
                     }
                 });
@@ -180,6 +220,8 @@ public class MainActivity extends FragmentActivity {
         }).start();
     }
 
+    // The following reads the JSON file from the SERVICE_URL
+    // Basically, we need to store the data from locations.json to a string
     protected void retrieveAndAddBuildings() throws IOException {
         HttpURLConnection conn = null;
         final StringBuilder json = new StringBuilder();
@@ -204,7 +246,7 @@ public class MainActivity extends FragmentActivity {
             }
         }
 
-        // Create markers for the city data.
+        // Create markers for the building data.
         // Must run this on the UI thread since it's a UI operation.
         runOnUiThread(new Runnable() {
             public void run() {
@@ -217,6 +259,7 @@ public class MainActivity extends FragmentActivity {
         });
     }
 
+    // The following code parses JSON data from string.
     void createMarkersFromJson(String json) throws JSONException {
         // De-serialize the JSON string into an array of building objects
         JSONArray jsonArray = new JSONArray(json);
@@ -226,14 +269,11 @@ public class MainActivity extends FragmentActivity {
             map.addMarker(new MarkerOptions()
                             .title(jsonObj.getString("name"))
                             .snippet(Integer.toString(jsonObj.getInt("idForInfoWindow")))
-                                    //.snippet(Integer.toString(jsonObj.getInt("check ins")))
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
                             .position(new LatLng(
                                     jsonObj.getJSONArray("latlng").getDouble(0),
-                                    jsonObj.getJSONArray("latlng").getDouble(1)
-                            ))
-
+                                    jsonObj.getJSONArray("latlng").getDouble(1)))
             );
         }
     }
-
 }

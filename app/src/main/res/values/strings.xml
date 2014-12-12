@@ -8,6 +8,13 @@
     <string name="search">Search</string>
     <string name="clear_search">Clear Search</string>
 
+    <string-array name="navigation_drawer_items_array">
+        <item>Create</item>
+        <item>Read</item>
+        <item>Help</item>
+    </string-array>
+
+
     <!-- Building Descriptions -->
     <string name="McGinley_Center">"Built in 1959, the McGinley Center is Rose Hill's "living room,"
         where students socialize, attend events, and dine at the Marketplace and Dagger John's.
