@@ -2,9 +2,11 @@ package com.example.ramap;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import flickr.FlickrActivity;
 
@@ -14,11 +16,16 @@ import flickr.FlickrActivity;
 public class OptionsActivity extends Activity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options_activity);
+
+        Bundle bundle = getIntent().getExtras(); // Creates a Bundle from intent and gets extras
+        String message = bundle.getString("TO_OPTIONS"); //Looks for
+
+        TextView txtView = (TextView) findViewById(R.id.textView);
+        txtView.setText(message);
 
         // Info Button
         Button infoButton = (Button)findViewById(R.id.info_button);
@@ -26,13 +33,9 @@ public class OptionsActivity extends Activity {
             @Override
             public void onClick(View view) {
                 //TODO launch new activity for info
-                Bundle extras = getIntent().getExtras();
-                if(extras != null) {
-                    String value = extras.getString("name");
-                }
-                Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
-                intent.putExtra("name", getTitle());
-                startActivity(intent); // launches InfoActivity
+                Intent info = new Intent(OptionsActivity.this, InfoActivity.class);
+                info.putExtra("TO_OPTIONS", getTitle());
+                startActivity(info);
 
             }
         });
@@ -49,17 +52,6 @@ public class OptionsActivity extends Activity {
             }
         });
 
-        // Twitter Button
-        /*Button twitterButton = (Button)findViewById(R.id.twitter_button);
-        picsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO launch new activity for info
-                Intent intent = new Intent(getApplicationContext(), TwitterActivity.class);
-                startActivity(intent); // launches InfoActivity
-
-            }
-        });*/
 
     }
 }

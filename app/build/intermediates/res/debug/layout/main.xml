@@ -29,9 +29,7 @@ https://developers.google.com/maps/documentation/android/map#using_xml_attribute
         map:uiTiltGestures="true"
         map:uiZoomControls="false"
         map:uiZoomGestures="true"
-        map:mapType="normal"
-
-        />
+        map:mapType="normal"/>
 
     <Button
         android:id="@+id/checkInButton"

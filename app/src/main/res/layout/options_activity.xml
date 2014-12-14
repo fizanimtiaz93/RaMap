@@ -8,6 +8,7 @@
         android:text="Select an option button below:"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:textSize="32sp"
         android:id="@+id/textView" />
 
     <Button

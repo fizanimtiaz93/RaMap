@@ -19,8 +19,15 @@ public class InfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_activity);
 
+
+        Bundle bundle = getIntent().getExtras(); // Creates a Bundle from intent and gets extras
+        String message = bundle.getString("TO_OPTIONS"); //Looks for
+
+        TextView txtView = (TextView) findViewById(R.id.textView);
+        txtView.setText(message);
+
         //--- text view---
-        TextView txtView = (TextView) findViewById(R.id.McGinley_center);
+        /*TextView txtView = (TextView) findViewById(R.id.McGinley_center);
         final String Label = txtView.getText().toString();
 
         txtView.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +37,7 @@ public class InfoActivity extends Activity {
                         Toast.LENGTH_LONG).show();
             }
 
-        });
+        });*/
 
 
     }

@@ -37,18 +37,8 @@ public class HistoryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.history_activity);
 
-        //_appPrefs = new PrefsActivity(getApplicationContext());
 
-        //_appPrefs.get();
 
-        // Shared Prefs
-       // MainActivity.sharedPreferences = getSharedPreferences(MainActivity.preName, MODE_PRIVATE);
-
-        // Store shared preferences
-       // SharedPreferences.Editor editor = MainActivity.sharedPreferences.
-       // var testName = editor  .  getString("Name");
-
-       //System.out.print( testName );
 
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,

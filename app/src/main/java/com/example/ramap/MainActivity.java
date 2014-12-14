@@ -26,10 +26,17 @@ import com.google.android.gms.maps.model.PolygonOptions;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -44,17 +51,17 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity{
     private static final String LOG_TAG = "RaMap";
 
     private static final String SERVICE_URL = "http://nrdyninja.com/android/ramap/locations.json";
 
     protected GoogleMap map;
 
-    //private static PrefsActivity _appPrefs;
+    public static final String SAVE = "MySavedLocations";
 
-    //public static SharedPreferences sharedPreferences;
-    //public static String preName = "mypref";
+    //String notCheckedIn = "You're not checked in, yet...";
+    String currentLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,42 +69,11 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.main);  // references layout/main.xml to the initial view
         setUpMapIfNeeded();             // sets up the MapView
 
-        //_appPrefs = new PrefsActivity(getApplicationContext());
-        // Shared Prefs
-        // sharedPreferences = getSharedPreferences(preName, MODE_PRIVATE);
-
         // Used for finding current location with button
         // Will eventually pass current location into a value so that markers
         // are populated when they're 5m from current location.
         map.setMyLocationEnabled(true);
         map.getUiSettings().setMyLocationButtonEnabled(true);
-
-        /*final TextView answerLabel = (TextView) findViewById(R.id.checkInLocation);
-        Button getCheckInButton = (Button) findViewById(R.id.checkInButton);
-
-        getCheckInButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                System.out.println("Output from onclick: "+ arg0); // Debug console output.
-                String answer = "You're checked into Keating Hall."; //set InfoWindowClickListener name
-                answerLabel.setText(answer);
-
-                //String buildingName = "Keating Hall";
-
-                //_appPrefs.save(buildingName);
-
-                // Open shared preferences for storage
-                //SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                // Save the data
-                //editor.putString("Name", "Keating Hall");
-
-                // Commit or Saves the value
-               // editor.commit();
-
-            }
-        });*/
     }
 
     @Override
@@ -115,8 +91,18 @@ public class MainActivity extends FragmentActivity {
         {
             //TODO this should open HistoryActivity.java
             case R.id.check_in_history_menu:
-                Intent intent = new Intent (getApplicationContext(), HistoryActivity.class);
-                startActivity(intent); // starts
+                SharedPreferences loadHistory = getSharedPreferences(SAVE, MODE_PRIVATE);
+                currentLocation = loadHistory.getString("name", "You're not checked in!");
+                //currentLocation.setText(String.valueOf(notCheckedIn));
+                loadHistory.getString(SAVE, "");
+                Toast.makeText(getApplicationContext(),
+                        ("Previous check in loaded successfully!\n" + currentLocation),
+                        Toast.LENGTH_SHORT).show();
+
+
+
+                //Intent intent = new Intent (getApplicationContext(), HistoryActivity.class);
+                //startActivity(intent); // starts
                 break;
 
             //TODO this should open settings activity
@@ -170,9 +156,6 @@ public class MainActivity extends FragmentActivity {
                         .strokeWidth(4)
                         .fillColor(Color.GREEN));
 
-
-
-
                 // allows info windows to be clicked on and open OptionsActivity
                 map.setOnInfoWindowClickListener(new OnInfoWindowClickListener(){
                     @Override
@@ -184,25 +167,39 @@ public class MainActivity extends FragmentActivity {
                                 ){ // TODO replace Keating Hall with last marker clicked title
 
                             // TODO pass marker.getTitle() to --> OptionsActivity --> Info Button, etc.
-                            Toast.makeText(MainActivity.this, "Location: " + marker.getTitle(), Toast.LENGTH_SHORT).show();
-                            Intent info = new Intent(MainActivity.this, OptionsActivity.class);
-                            startActivity(info);
+                            SharedPreferences saveLocation = getSharedPreferences(SAVE, MODE_PRIVATE);
+                            SharedPreferences.Editor editor = saveLocation.edit();
+                            editor.putString("name", marker.getTitle());
+                            editor.commit(); //applies the name to XML
 
-                            Button getCheckInButton = (Button) findViewById(R.id.checkInButton);
-                            getCheckInButton.setOnClickListener(new View.OnClickListener() {
+                            //Push current checked in location to phone's status bar
+                            Notify("Checked Into", marker.getTitle());
 
-                                @Override
-                                public void onClick(View arg0) {
-                                    Toast.makeText(MainActivity.this, "You checked into:" + marker.getTitle(), Toast.LENGTH_SHORT).show();
-                                    //System.out.println("Output from onclick: "+ marker.getTitle()); // Debug console output.
-
-                                }
-                            });
+                            Toast.makeText(MainActivity.this, "Location: " + marker.getTitle() + " added to history.", Toast.LENGTH_SHORT).show();
+                            Intent info = new Intent(MainActivity.this, OptionsActivity.class); // Setup intent to pass marker.getTitle value to OptionsActivity
+                            info.putExtra("TO_OPTIONS", marker.getTitle()); // Actually pass the title value based on the marker you clicked in key: TO_OPTIONS to OptionsActivity
+                            startActivity(info); // Start OptionsActivity
                         }
                     }
                 });
             }
         }
+    }
+
+    @SuppressWarnings("deprecation")
+    private void Notify(String notificationTitle, String notificationMessage) {
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        @SuppressWarnings("deprecation")
+        Notification notification = new Notification(R.drawable.ic_check_in,
+                "New Check In", System.currentTimeMillis());
+
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
+                notificationIntent, 0);
+
+        notification.setLatestEventInfo(MainActivity.this, notificationTitle,
+                notificationMessage, pendingIntent);
+        notificationManager.notify(9999, notification);
     }
 
     private void setUpMap() {
