@@ -28,10 +28,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -89,7 +91,7 @@ public class MainActivity extends FragmentActivity{
         // TODO Auto-generated method stub
         switch (item.getItemId())
         {
-            //TODO this should open HistoryActivity.java
+            //TODO: Open HistoryActivity.java with ListView Array of SharedPreferences values.
             case R.id.check_in_history_menu:
                 SharedPreferences loadHistory = getSharedPreferences(SAVE, MODE_PRIVATE);
                 currentLocation = loadHistory.getString("name", "You're not checked in!");
@@ -99,19 +101,22 @@ public class MainActivity extends FragmentActivity{
                         ("Previous check in loaded successfully!\n" + currentLocation),
                         Toast.LENGTH_SHORT).show();
 
-
-
                 //Intent intent = new Intent (getApplicationContext(), HistoryActivity.class);
                 //startActivity(intent); // starts
                 break;
 
-            //TODO this should open settings activity
-            case R.id.settings_menu:
-                Toast.makeText(getBaseContext(), "Settings option doesn't work yet.", Toast.LENGTH_SHORT).show();
-                break;
+            //TODO: This should open a SettingsActivity.java to change settings on the application.
+            //case R.id.settings_menu:
+            //    Toast.makeText(getBaseContext(), "Settings option doesn't work yet.", Toast.LENGTH_SHORT).show();
+            //    break;
 
             case R.id.about_menu:
-                Toast.makeText(getBaseContext(), "Created by: Joseph LeRoy, Kevin McCarthy, Alexander Despotakis, Fizan Imtiaz", Toast.LENGTH_SHORT).show();
+                AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+                alertDialog.setTitle("About RaMap");
+                alertDialog.setMessage("Developed for CISC 4400 by:\n" + "Joseph LeRoy\n" + "Kevin McCarthy\n" + "Alexander Despotakis\n" + "Fizan Imtiaz");
+                alertDialog.show();
+
+                //Toast.makeText(getBaseContext(), "Created by: Joseph LeRoy, Kevin McCarthy, Alexander Despotakis, Fizan Imtiaz", Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);

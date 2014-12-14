@@ -97,7 +97,7 @@ int drawable pin2 0x7f020024
 int drawable powered_by_google_dark 0x7f020025
 int drawable powered_by_google_light 0x7f020026
 int id McGinley_center 0x7f0a001d
-int id about_menu 0x7f0a0028
+int id about_menu 0x7f0a0027
 int id book_now 0x7f0a000e
 int id building_list 0x7f0a001b
 int id buyButton 0x7f0a000a
@@ -131,7 +131,6 @@ int id production 0x7f0a0007
 int id sandbox 0x7f0a0008
 int id satellite 0x7f0a0003
 int id selectionDetails 0x7f0a000b
-int id settings_menu 0x7f0a0027
 int id strict_sandbox 0x7f0a0009
 int id terrain 0x7f0a0004
 int id textView 0x7f0a001c
