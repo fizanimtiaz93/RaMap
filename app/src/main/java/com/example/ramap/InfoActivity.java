@@ -21,10 +21,10 @@ public class InfoActivity extends Activity {
 
 
         Bundle bundle = getIntent().getExtras(); // Creates a Bundle from intent and gets extras
-        String message = bundle.getString("TO_OPTIONS"); //Looks for
+        String message = bundle.getString("TO_INFO"); //Looks for
 
-        TextView txtView = (TextView) findViewById(R.id.textView);
-        txtView.setText(message);
+        //TextView txtView = (TextView) findViewById(R.id.textViewInfo);
+        //txtView.setText(message);
 
         //--- text view---
         /*TextView txtView = (TextView) findViewById(R.id.McGinley_center);

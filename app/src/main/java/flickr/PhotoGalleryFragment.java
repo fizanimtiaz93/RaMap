@@ -36,6 +36,9 @@ public class PhotoGalleryFragment extends Fragment {
     String textToSearch = "Keating Hall"; // this does not need to be hardcoded. See comment below for how to make it change w/ intent
 
 
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
