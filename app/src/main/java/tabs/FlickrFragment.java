@@ -1,4 +1,4 @@
-package com.example.ramap;
+package tabs;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -6,6 +6,7 @@ import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SearchView;
 
+import com.example.ramap.R;
+
 import java.util.ArrayList;
 
 import flickr.FlickrFetchr;
@@ -32,6 +35,7 @@ import flickr.ThumbnailDownloader;
  * Created by Joe's Desktop on 12/14/2014.
  */
 public class FlickrFragment extends Fragment{
+
     GridView mGridView;
     ArrayList<GalleryItem> mItems;
     ThumbnailDownloader mThumbnailThread;

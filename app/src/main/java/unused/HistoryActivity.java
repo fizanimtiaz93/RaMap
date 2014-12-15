@@ -1,4 +1,4 @@
-package com.example.ramap;
+package unused;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.ramap.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

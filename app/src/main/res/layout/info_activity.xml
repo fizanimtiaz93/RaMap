@@ -20,13 +20,13 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/textView" />-->
 
-    <TextView
+    <!--<TextView
         android:id="@+id/McGinley_center"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/McGinley_Center"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true" />-->
 
 </RelativeLayout>

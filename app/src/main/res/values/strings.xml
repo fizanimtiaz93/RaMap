@@ -9,11 +9,19 @@
     <string name="clear_search">Clear Search</string>
 
     <!-- Building Descriptions -->
-    <string name="McGinley_Center">"Built in 1959, the McGinley Center is Rose Hill's "living room,"
+    <!--<string name="McGinley_Center">"Built in 1959, the McGinley Center is Rose Hill's "living room,"
         where students socialize, attend events, and dine at the Marketplace and Dagger John's.
         Named in honor of Father Laurence J. McGinley, president of Fordham University from 1949 to 1963,
         the student center is also home to the Office of Career Services, the University Bookstore, Campus Ministry,
         and the Office of Student Leadership and Community Development. It also houses the Dorothy Day Center for Service
         and Justice, and Global Outreach, a cultural immersion and service program."</string>
+
+    <string name="Jack_Coffey_Field">"Named in honor of John Francis 'Jack' Coffey, the 1910 Fordham
+        graduate considered by many to be the father of Fordham athletics, Jack Coffey Field is the home of the University's football and soccer teams."</string>
+
+    <string name="Rose_Hill_Gymnasium">"When it opened, on January 16, 1925, the 3,470-seat Rose Hill Gymnasium was one of the largest on-campus facilities,
+        earning it the nickname 'The Prairie' due to its large floor space. The oldest Division I facility in the country, the gymnasium has been the site
+        of many legendary college and high school basketball games, including Kareem Abdul Jabbar's final high school game. Today, the men's and women's
+        basketball teams and volleyball squads play here."</string>-->
 
 </resources>

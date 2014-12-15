@@ -1,4 +1,4 @@
-package com.example.ramap;
+package unused;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.ramap.R;
 
 import java.util.Scanner;
 

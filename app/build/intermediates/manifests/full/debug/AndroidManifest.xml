@@ -32,7 +32,7 @@
         android:required="true" />
 
     <application
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_launcher_sheep"
         android:label="@string/app_name" >
 
         <!--
@@ -47,7 +47,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name="com.example.ramap.MainActivity"
+            android:name="com.example.ramap.SplashScreen"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,7 +56,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.ramap.HistoryActivity"
+            android:name="com.example.ramap.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="unused.HistoryActivity"
             android:label="Check In History" >
         </activity>
         <activity
@@ -64,7 +68,7 @@
             android:label="Options Activity" >
         </activity>
         <activity
-            android:name="com.example.ramap.InfoActivity"
+            android:name="unused.InfoActivity"
             android:label="Building Info Activity" >
         </activity>
         <activity

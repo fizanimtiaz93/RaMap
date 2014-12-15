@@ -31,7 +31,7 @@ https://developers.google.com/maps/documentation/android/map#using_xml_attribute
         map:uiZoomGestures="true"
         map:mapType="normal"/>
 
-    <Button
+    <!--<Button
         android:id="@+id/checkInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,7 +46,7 @@ https://developers.google.com/maps/documentation/android/map#using_xml_attribute
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:textColor="#000"
-        />
+        />-->
 
 </RelativeLayout>
 <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/src/main/res/layout/main.xml -->

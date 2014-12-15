@@ -34,14 +34,6 @@
     <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/version.xml -->
     <eat-comment/>
     <integer name="google_play_services_version">6171000</integer>
-    <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/src/main/res/values/strings.xml -->
-    <eat-comment/>
-    <string name="McGinley_Center">"Built in 1959, the McGinley Center is Rose Hill's "living room,"
-        where students socialize, attend events, and dine at the Marketplace and Dagger John's.
-        Named in honor of Father Laurence J. McGinley, president of Fordham University from 1949 to 1963,
-        the student center is also home to the Office of Career Services, the University Bookstore, Campus Ministry,
-        and the Office of Student Leadership and Community Development. It also houses the Dorothy Day Center for Service
-        and Justice, and Global Outreach, a cultural immersion and service program."</string>
     <!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="accept">Accept</string>

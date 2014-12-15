@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragmentTwitter"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="#800000">
-    
-    <TextView android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView" />
+
+    <!--<TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Twitter Screen"
         android:textSize="20dp"
-        android:layout_centerInParent="true"/>
-    
-
-</RelativeLayout><!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/src/main/res/layout/fragment_twitter.xml -->
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />-->
+</LinearLayout><!-- From: file:/C:/Users/Joe's%20Desktop/Downloads/ramap-android-master/app/src/main/res/layout/fragment_twitter.xml -->

@@ -60,7 +60,7 @@ public class MainActivity extends FragmentActivity{
 
     protected GoogleMap map;
 
-    public static final String SAVE = "MySavedLocations";
+    public static final String SAVE = "MySavedLocations"; //This is the SharedPreference name
 
     //String notCheckedIn = "You're not checked in, yet...";
     String currentLocation;
@@ -172,7 +172,7 @@ public class MainActivity extends FragmentActivity{
                                 ){ // TODO replace Keating Hall with last marker clicked title
 
                             // TODO pass marker.getTitle() to --> OptionsActivity --> Info Button, etc.
-                            SharedPreferences saveLocation = getSharedPreferences(SAVE, MODE_PRIVATE);
+                            SharedPreferences saveLocation = getSharedPreferences(SAVE, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = saveLocation.edit();
                             editor.putString("name", marker.getTitle());
                             editor.commit(); //applies the name to XML

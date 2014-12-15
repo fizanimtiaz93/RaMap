@@ -1,8 +1,8 @@
 package com.example.ramap.adapter;
 
-import com.example.ramap.InfoFragment;
-import com.example.ramap.TwitterFragment;
-import com.example.ramap.FlickrFragment;
+import tabs.InfoFragment;
+import tabs.TwitterFragment;
+import tabs.FlickrFragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
