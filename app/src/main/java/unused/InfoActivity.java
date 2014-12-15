@@ -1,4 +1,4 @@
-package unused;
+/*package unused;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,9 +11,7 @@ import com.example.ramap.R;
 
 import java.util.Scanner;
 
-/**
- * Created by Joe's Desktop on 12/8/2014.
- */
+
 public class InfoActivity extends Activity {
 
     @Override
@@ -29,7 +27,7 @@ public class InfoActivity extends Activity {
         //txtView.setText(message);
 
         //--- text view---
-        /*TextView txtView = (TextView) findViewById(R.id.McGinley_center);
+        TextView txtView = (TextView) findViewById(R.id.McGinley_center);
         final String Label = txtView.getText().toString();
 
         txtView.setOnClickListener(new View.OnClickListener() {
@@ -39,9 +37,9 @@ public class InfoActivity extends Activity {
                         Toast.LENGTH_LONG).show();
             }
 
-        });*/
+        });
 
 
     }
 
-}
+}*/

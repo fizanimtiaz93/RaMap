@@ -1,4 +1,4 @@
-package unused;
+/*package unused;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,11 +22,11 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+*/
 /**
  * Created by Joe's Desktop on 12/8/2014.
  */
-public class HistoryActivity extends Activity {
+/*public class HistoryActivity extends Activity {
 
     //TODO old code below, uncomment to fix.
     // Array of strings...
@@ -49,4 +49,4 @@ public class HistoryActivity extends Activity {
         ListView listView = (ListView) findViewById(R.id.building_list);
         listView.setAdapter(adapter);
     }
-}
+}*/
