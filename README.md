@@ -20,7 +20,7 @@ RaMap is an app developed for Fordham University's Rose Hill campus. Some of the
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Joseph LeRoy
+Copyright (c) 2014 Joseph LeRoy, Fizan Imtiaz, Kevin McCarthy, Alexander Despotakis
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
